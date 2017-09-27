@@ -1,10 +1,15 @@
 // @flow
-import React from "react";
+import React, { Component } from "react";
+import FormField from "./components/Form";
 
-const App = () => (
-  <div>
-    <span>hello world!</span>
-  </div>
-);
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return <FormField type="TextInput" {...this.props} color="red" />;
+  }
+}
 
 export default App;
