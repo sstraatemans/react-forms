@@ -1,14 +1,15 @@
 // @flow
-import React, { Component } from "react";
-import FormField from "./components/Form";
+import * as React from "react";
+import FormField from "./components/FormField";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+type Props = {};
+class App extends React.Component<Props> {
   render() {
-    return <FormField type="TextInput" {...this.props} color="red" />;
+    return (
+      <div>
+        <FormField placeholder="fill in value" type="text" name="test" />
+      </div>
+    );
   }
 }
 
