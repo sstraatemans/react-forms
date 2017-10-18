@@ -1,8 +1,16 @@
+// @flow
 import React from "react";
-import PropTypes from "prop-types";
 import FormField from "./../FormField";
 
-const CheckBox = props => {
+type Props = {
+  name: string,
+  onChange: Function,
+  onBlur: Function,
+  value: string,
+  children: Array<any>
+};
+
+const CheckBox = (props: Props) => {
   return (
     <div>
       <input
@@ -18,11 +26,6 @@ const CheckBox = props => {
       </label>
     </div>
   );
-};
-
-CheckBox.propTypes = {
-  label: PropTypes.string,
-  children: PropTypes.array
 };
 
 export default FormField(CheckBox);

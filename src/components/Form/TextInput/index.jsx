@@ -1,7 +1,17 @@
+// @flow
 import React from "react";
 import FormField from "./../FormField";
 
-const TextInput = props => {
+type Props = {
+  id: string,
+  name: string,
+  value: string,
+  onBlur: Function,
+  onChange: Function,
+  placeholder?: string
+};
+
+const TextInput = (props: Props) => {
   return <input type="text" {...props} />;
 };
 

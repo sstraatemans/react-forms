@@ -1,10 +1,22 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+// @flow
+import * as React from "react";
 import "./Form.css";
 import Validator from "./../../services/Validator";
 
-class Form extends Component {
-  constructor(props) {
+type Props = {
+  handleSubmit: Function,
+  children: Array<any>
+};
+
+class Form extends React.Component<Props> {
+  inputs: Array<any>;
+  Validator: Function;
+  handleSubmit: Function;
+  attachFormField: Function;
+  detachFormField: Function;
+  getModel: Function;
+
+  constructor(props: Props) {
     super(props);
     this.inputs = [];
     this.Validator = new Validator();
@@ -14,24 +26,24 @@ class Form extends Component {
     this.getModel = this.getModel.bind(this);
   }
 
-  attachFormField(field) {
+  attachFormField(field: React.Element<any>) {
     this.inputs.push(field);
   }
 
-  detachFormField(field) {
+  detachFormField(field: React.Element<any>) {
     delete this.inputs[field.props.name];
   }
 
   getModel() {
     let model = {};
-    Object.keys(this.inputs).forEach(key => {
+    this.inputs.forEach(key => {
       let m = this.inputs[key];
       model[m.props.name] = m.state.value;
     });
     return model;
   }
 
-  handleSubmit(e) {
+  handleSubmit(e: SyntheticEvent<HTMLButtonElement>) {
     e.preventDefault();
     if (!this.Validator.validateForm(this.inputs)) {
       return;
@@ -54,9 +66,5 @@ class Form extends Component {
     return <form onSubmit={this.handleSubmit}>{childrenWithProps}</form>;
   }
 }
-
-Form.propTypes = {
-  handleSubmit: PropTypes.func.isRequired
-};
 
 export default Form;

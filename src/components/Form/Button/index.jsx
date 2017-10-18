@@ -1,18 +1,18 @@
+// @flow
 import React from "react";
-import PropTypes from "prop-types";
 import "./index.css";
 
-const Button = props => {
+type Props = {
+  isLoading: boolean,
+  label: string
+};
+
+const Button = (props: Props) => {
   return (
     <div className={`button ${props.isLoading ? " loading" : ""}`}>
       <input className="buttontype" type="submit" value={props.label} />
     </div>
   );
-};
-
-Button.propTypes = {
-  label: PropTypes.string.isRequired,
-  isLoading: PropTypes.bool
 };
 
 export default Button;

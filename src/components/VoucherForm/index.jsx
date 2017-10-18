@@ -1,18 +1,24 @@
+// @flow
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import Form from "./../Form";
 import TextInput from "./../Form/TextInput";
 import CheckBox from "./../Form/CheckBox";
-import Button from "./../Button";
+import Button from "./../Form/Button";
 
-class VoucherForm extends Component {
-  static contextTypes = {
-    history: PropTypes.object
-  };
+type Props = {};
+type State = {
+  firstName: string,
+  lastName: string,
+  email: string,
+  terms: boolean,
+  isLoading: boolean
+};
+class VoucherForm extends Component<Props, State> {
+  handleSubmit: Function;
 
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
     this.state = {
       firstName: "",

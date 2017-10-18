@@ -1,6 +1,7 @@
+// @flow
 import React from "react";
 
-const FormSubmit = props => {
+const FormSubmit = () => {
   return (
     <div className="herotext">
       <h2 className="important">

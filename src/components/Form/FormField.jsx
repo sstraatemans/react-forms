@@ -1,10 +1,36 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+// @flow
+import * as React from "react";
 import Validator from "./../../services/Validator";
 
-const FormField = InputFieldComponent => {
-  class Wrapper extends Component {
-    constructor(props) {
+type Props = {
+  name: string,
+  label?: string,
+  placeholder?: string,
+  validation?: Object,
+  validationRules?: Object,
+  validationMessage?: string,
+  attachFormField?: (field: any) => void, //this should be fixed!!! is required
+  detachFormField?: (field: any) => void
+};
+
+type State = {
+  isValidationError: boolean,
+  value: string
+};
+
+const FormField = (InputFieldComponent: React.ComponentType<any>) => {
+  class Wrapper extends React.Component<Props, State> {
+    Validator: Function;
+    validationHandler: Function;
+    validationMessage: string;
+    changeHandler: Function;
+    restProps: Object;
+
+    static defaultProps = {
+      validationMessage: "There is a problem with this field"
+    };
+
+    constructor(props: Props) {
       super(props);
 
       this.state = {
@@ -18,10 +44,14 @@ const FormField = InputFieldComponent => {
     }
 
     componentWillMount() {
-      this.props.attachFormField(this);
+      if (this.props.attachFormField) {
+        this.props.attachFormField(this);
+      }
     }
     componentWillUnMount() {
-      this.props.detachFormField(this);
+      if (this.props.detachFormField) {
+        this.props.detachFormField(this);
+      }
     }
 
     renderLabel() {
@@ -30,10 +60,10 @@ const FormField = InputFieldComponent => {
       }
     }
 
-    changeHandler(e) {
-      let val = e.target.value;
+    changeHandler(e: SyntheticEvent<any>) {
+      let val = e.currentTarget.value;
       if (e.target.type === "checkbox") {
-        val = e.target.checked;
+        val = e.currentTarget.checked;
       }
       this.setState({ value: val });
     }
@@ -52,20 +82,20 @@ const FormField = InputFieldComponent => {
 
     showValidationError() {
       if (this.state.isValidationError) {
-        return <div className="formfield-error">{this.validationMessage}</div>;
+        return (
+          <div className="formfield-error">{this.props.validationMessage}</div>
+        );
       }
     }
 
     render() {
-      const {
+      let {
         validation,
         validationMessage,
         attachFormField,
         detachFormField,
         ...rest
       } = this.props;
-      this.validationRules = validation;
-      this.validationMessage = validationMessage;
       this.restProps = rest;
 
       return (
@@ -87,21 +117,6 @@ const FormField = InputFieldComponent => {
       );
     }
   }
-
-  Wrapper.propTypes = {
-    name: PropTypes.string.isRequired,
-    label: PropTypes.string,
-    placeholder: PropTypes.string,
-    validation: PropTypes.object,
-    validationMessage: PropTypes.string,
-    attachFormField: PropTypes.func,
-    detachFormField: PropTypes.func
-  };
-
-  // Specifies the default values for props:
-  Wrapper.defaultProps = {
-    validationMessage: "There is a problem with this field"
-  };
 
   return Wrapper;
 };
