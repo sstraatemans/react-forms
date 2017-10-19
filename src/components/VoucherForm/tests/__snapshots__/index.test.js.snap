@@ -1,0 +1,276 @@
+exports[`<VoucherForm /> render component <VoucherForm> 1`] = `
+<VoucherForm>
+  <Form
+    handleSubmit={[Function]}>
+    <form
+      onSubmit={[Function]}>
+      <Wrapper
+        attachFormField={[Function]}
+        detachFormField={[Function]}
+        key=".0"
+        label="First name"
+        name="firstName"
+        placeholder="Enter first name"
+        validation={
+          Object {
+            "isAlphaOnly": true,
+            "minLength": 2,
+            "required": true,
+          }
+        }
+        validationMessage="There is a problem with this field">
+        <styled.div>
+          <div
+            className="sc-bwzfXH gQVPaf">
+            <styled.label
+              htmlFor="firstName"
+              validationError="">
+              <label
+                className="sc-bxivhb fHmKNk"
+                htmlFor="firstName">
+                First name
+              </label>
+            </styled.label>
+            <TextInput
+              id="firstName"
+              label="First name"
+              name="firstName"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Enter first name"
+              val={false}
+              validationError="">
+              <styled.input
+                id="firstName"
+                label="First name"
+                name="firstName"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Enter first name"
+                type="text"
+                val={false}
+                validationError="">
+                <input
+                  className="sc-bdVaJa cZVJwy"
+                  id="firstName"
+                  label="First name"
+                  name="firstName"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Enter first name"
+                  type="text" />
+              </styled.input>
+            </TextInput>
+          </div>
+        </styled.div>
+      </Wrapper>
+      <Wrapper
+        attachFormField={[Function]}
+        detachFormField={[Function]}
+        key=".1"
+        label="Surname"
+        name="lastName"
+        placeholder="Enter surname"
+        validation={
+          Object {
+            "required": true,
+          }
+        }
+        validationMessage="There is a problem with this field">
+        <styled.div>
+          <div
+            className="sc-bwzfXH gQVPaf">
+            <styled.label
+              htmlFor="lastName"
+              validationError="">
+              <label
+                className="sc-bxivhb fHmKNk"
+                htmlFor="lastName">
+                Surname
+              </label>
+            </styled.label>
+            <TextInput
+              id="lastName"
+              label="Surname"
+              name="lastName"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Enter surname"
+              val={false}
+              validationError="">
+              <styled.input
+                id="lastName"
+                label="Surname"
+                name="lastName"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Enter surname"
+                type="text"
+                val={false}
+                validationError="">
+                <input
+                  className="sc-bdVaJa cZVJwy"
+                  id="lastName"
+                  label="Surname"
+                  name="lastName"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Enter surname"
+                  type="text" />
+              </styled.input>
+            </TextInput>
+          </div>
+        </styled.div>
+      </Wrapper>
+      <Wrapper
+        attachFormField={[Function]}
+        detachFormField={[Function]}
+        key=".2"
+        label="Email address"
+        name="email"
+        placeholder="Enter your e-mail address"
+        validation={
+          Object {
+            "isEmail": true,
+            "required": true,
+          }
+        }
+        validationMessage="There is a problem with this field">
+        <styled.div>
+          <div
+            className="sc-bwzfXH gQVPaf">
+            <styled.label
+              htmlFor="email"
+              validationError="">
+              <label
+                className="sc-bxivhb fHmKNk"
+                htmlFor="email">
+                Email address
+              </label>
+            </styled.label>
+            <TextInput
+              id="email"
+              label="Email address"
+              name="email"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Enter your e-mail address"
+              val={false}
+              validationError="">
+              <styled.input
+                id="email"
+                label="Email address"
+                name="email"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Enter your e-mail address"
+                type="text"
+                val={false}
+                validationError="">
+                <input
+                  className="sc-bdVaJa cZVJwy"
+                  id="email"
+                  label="Email address"
+                  name="email"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Enter your e-mail address"
+                  type="text" />
+              </styled.input>
+            </TextInput>
+          </div>
+        </styled.div>
+      </Wrapper>
+      <Wrapper
+        attachFormField={[Function]}
+        detachFormField={[Function]}
+        key=".3"
+        name="terms"
+        validation={
+          Object {
+            "required": true,
+          }
+        }
+        validationMessage="You need to accept privacy settlement">
+        <styled.div>
+          <div
+            className="sc-bwzfXH gQVPaf">
+            <StyledCheckBox
+              id="terms"
+              name="terms"
+              onBlur={[Function]}
+              onChange={[Function]}
+              val={false}
+              validationError="">
+              <styled.div>
+                <div
+                  className="sc-ifAKCX cFlEyZ">
+                  <styled.input
+                    checked=""
+                    id="terms"
+                    name="terms"
+                    onChange={[Function]}
+                    type="checkbox">
+                    <input
+                      checked=""
+                      className="sc-EHOje hufmda"
+                      id="terms"
+                      name="terms"
+                      onChange={[Function]}
+                      type="checkbox" />
+                  </styled.input>
+                  <styled.label
+                    htmlFor="terms"
+                    validationError="">
+                    <label
+                      className="sc-gzVnrw JJLkz"
+                      htmlFor="terms">
+                      <styled.span
+                        checked="">
+                        <span
+                          checked=""
+                          className="sc-bZQynM jIqeTH" />
+                      </styled.span>
+                      Accept 
+                      <a
+                        href="#">
+                        privacy settlement
+                      </a>
+                    </label>
+                  </styled.label>
+                </div>
+              </styled.div>
+            </StyledCheckBox>
+          </div>
+        </styled.div>
+      </Wrapper>
+      <styled.div
+        attachFormField={[Function]}
+        detachFormField={[Function]}
+        key=".4">
+        <div
+          className="sc-htoDjs keePpf">
+          <Button
+            isLoading={false}
+            label="Get offer">
+            <styled.div
+              isLoading="">
+              <div
+                className="sc-dnqmqq iEgmMl">
+                <styled.input
+                  type="submit"
+                  value="Get offer">
+                  <input
+                    className="sc-iwsKbI fVrXAA"
+                    type="submit"
+                    value="Get offer" />
+                </styled.input>
+              </div>
+            </styled.div>
+          </Button>
+        </div>
+      </styled.div>
+    </form>
+  </Form>
+</VoucherForm>
+`;

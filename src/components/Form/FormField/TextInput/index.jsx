@@ -17,4 +17,5 @@ const TextInput = (props: Props) => {
   return <Input type="text" {...props} />;
 };
 
+export const UnWrapped = TextInput;
 export default FormField(TextInput);

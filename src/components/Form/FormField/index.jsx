@@ -16,7 +16,7 @@ type Props = {
 
 type State = {
   isValidationError: boolean,
-  value: string
+  val: boolean
 };
 
 const FormField = (InputFieldComponent: React.ComponentType<any>) => {
@@ -36,7 +36,7 @@ const FormField = (InputFieldComponent: React.ComponentType<any>) => {
 
       this.state = {
         isValidationError: false,
-        value: ""
+        val: false
       };
 
       this.Validator = new Validator();
@@ -69,11 +69,11 @@ const FormField = (InputFieldComponent: React.ComponentType<any>) => {
     }
 
     changeHandler(e: SyntheticEvent<any>) {
-      let val = e.currentTarget.value;
+      let value = e.currentTarget.value;
       if (e.target.type === "checkbox") {
-        val = e.currentTarget.checked;
+        value = e.currentTarget.checked;
       }
-      this.setState({ value: val });
+      this.setState({ val: value });
     }
 
     validationHandler() {
@@ -81,7 +81,7 @@ const FormField = (InputFieldComponent: React.ComponentType<any>) => {
         return;
       }
 
-      if (!this.Validator.validate(this.state.value, this.props.validation)) {
+      if (!this.Validator.validate(this.state.val, this.props.validation)) {
         this.setState({ isValidationError: true });
         return;
       }
@@ -113,7 +113,7 @@ const FormField = (InputFieldComponent: React.ComponentType<any>) => {
             {...this.restProps}
             onChange={this.changeHandler}
             onBlur={this.validationHandler}
-            value={this.state.value}
+            val={this.state.val}
           />
           {this.showValidationError()}
         </InputFieldWrapper>

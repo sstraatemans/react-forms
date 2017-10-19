@@ -27,7 +27,7 @@ export const CheckBoxBox = styled.span`
       left: 2px;
       width: 22px;
       height: 10px;
-      border: 3px solid ${props => props.theme.errorColor};;
+      border: 3px solid ${props.theme.errorColor};
       border-top: 0;
       border-right: 0;
 

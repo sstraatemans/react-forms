@@ -1,0 +1,10 @@
+exports[`<TextInput /> render component <TextInput> 1`] = `
+<TextInput>
+  <styled.input
+    type="text">
+    <input
+      className="sc-bdVaJa cZVJwy"
+      type="text" />
+  </styled.input>
+</TextInput>
+`;

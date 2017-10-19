@@ -8,7 +8,7 @@ type Props = {
   name: string,
   onChange: Function,
   onBlur: Function,
-  value: string,
+  val: boolean,
   children: Array<any>
 };
 
@@ -20,16 +20,18 @@ const StyledCheckBox = (props: Props) => {
         id={props.name}
         name={props.name}
         onChange={props.onChange}
+        checked={props.val ? "checked" : ""}
       />
       <Label
         validationError={props.validationError ? "true" : ""}
         htmlFor={props.name}
       >
-        <CheckBoxBox checked={props.value ? "checked" : ""} />
+        <CheckBoxBox checked={props.val ? "checked" : ""} />
         {props.children}
       </Label>
     </CheckBoxWrapper>
   );
 };
 
+export const UnWrapped = StyledCheckBox;
 export default FormField(StyledCheckBox);
