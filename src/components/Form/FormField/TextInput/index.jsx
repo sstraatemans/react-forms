@@ -1,8 +1,10 @@
 // @flow
 import React from "react";
-import FormField from "./../FormField";
+import { Input } from "./style";
+import FormField from "./../../FormField";
 
 type Props = {
+  validationError: boolean,
   id: string,
   name: string,
   value: string,
@@ -12,7 +14,7 @@ type Props = {
 };
 
 const TextInput = (props: Props) => {
-  return <input type="text" {...props} />;
+  return <Input type="text" {...props} />;
 };
 
 export default FormField(TextInput);

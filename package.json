@@ -6,11 +6,14 @@
     "flow-bin": "^0.57.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "styled-components": "^2.2.1"
   },
   "devDependencies": {
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-15": "^1.0.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "enzyme-to-json": "^3.1.4",
     "react-scripts": "0.9.5",
     "react-test-renderer": "^16.0.0"
   },

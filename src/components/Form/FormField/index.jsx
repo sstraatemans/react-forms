@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
-import Validator from "./../../services/Validator";
+import Validator from "./../../../services/Validator";
+import { InputFieldWrapper, FormFieldError, Label } from "./style";
 
 type Props = {
   name: string,
@@ -56,7 +57,14 @@ const FormField = (InputFieldComponent: React.ComponentType<any>) => {
 
     renderLabel() {
       if (this.props.label) {
-        return <label htmlFor={this.props.name}>{this.props.label}</label>;
+        return (
+          <Label
+            validationError={this.state.isValidationError ? "true" : ""}
+            htmlFor={this.props.name}
+          >
+            {this.props.label}
+          </Label>
+        );
       }
     }
 
@@ -82,9 +90,7 @@ const FormField = (InputFieldComponent: React.ComponentType<any>) => {
 
     showValidationError() {
       if (this.state.isValidationError) {
-        return (
-          <div className="formfield-error">{this.props.validationMessage}</div>
-        );
+        return <FormFieldError>{this.props.validationMessage}</FormFieldError>;
       }
     }
 
@@ -99,13 +105,10 @@ const FormField = (InputFieldComponent: React.ComponentType<any>) => {
       this.restProps = rest;
 
       return (
-        <div
-          className={`formfield ${InputFieldComponent.name.toLowerCase()} ${this
-            .state.isValidationError
-            ? "error"
-            : ""}`}
-        >
+        <InputFieldWrapper>
+          {this.renderLabel()}
           <InputFieldComponent
+            validationError={this.state.isValidationError ? "true" : ""}
             id={this.props.name}
             {...this.restProps}
             onChange={this.changeHandler}
@@ -113,7 +116,7 @@ const FormField = (InputFieldComponent: React.ComponentType<any>) => {
             value={this.state.value}
           />
           {this.showValidationError()}
-        </div>
+        </InputFieldWrapper>
       );
     }
   }

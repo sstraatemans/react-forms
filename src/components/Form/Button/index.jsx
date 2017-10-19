@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import "./index.css";
+import { StyledButton, StyledButtonWrapper } from "./style";
 
 type Props = {
   isLoading: boolean,
@@ -9,9 +9,9 @@ type Props = {
 
 const Button = (props: Props) => {
   return (
-    <div className={`button ${props.isLoading ? " loading" : ""}`}>
-      <input className="buttontype" type="submit" value={props.label} />
-    </div>
+    <StyledButtonWrapper isLoading={props.isLoading ? "true" : ""}>
+      <StyledButton type="submit" value={props.label} />
+    </StyledButtonWrapper>
   );
 };
 

@@ -1,0 +1,18 @@
+exports[`<Button /> render component <Button> 1`] = `
+<Button>
+  <styled.div
+    isLoading="">
+    <div
+      className="sc-bwzfXH gZEvPN">
+      <styled.input
+        type="submit"
+        value={undefined}>
+        <input
+          className="sc-htpNat jJfBff"
+          type="submit"
+          value={undefined} />
+      </styled.input>
+    </div>
+  </styled.div>
+</Button>
+`;
